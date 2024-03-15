@@ -1,0 +1,9 @@
+numpy
+nuscenes
+pyquaternion
+scipy
+argparse
+tqdm
+matplotlib
+
+# Set up the NuScenes devkit by adding it to the Python path
