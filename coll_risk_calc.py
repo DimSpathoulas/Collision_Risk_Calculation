@@ -264,7 +264,7 @@ def csp_calculation(octs, tracks):
         octagon = octagon - relative_pos
         octagon = (R @ octagon.T).T
 
-        # The dblquad creates a box from the octagon not exactly the octagon
+        # The dblquad creates a rectangular box from the octagon
         # A more accurate method for computing the intersection between
         # The octagon and gaussian will be integrated in the future
 
