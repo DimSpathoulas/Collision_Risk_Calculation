@@ -82,11 +82,9 @@ def vizualizer(pt, sample_csp, relative_pos, relative_rot, obstacles, curr_sampl
 
     ax.set_aspect('equal', adjustable='box')
 
-    # Set labels
     ax.set_xlabel('X-axis')
     ax.set_ylabel('Y-axis')
 
-    # Display the plot
     plt.title(f'Token {curr_sample}')
     plt.pause(0.3)
 
