@@ -19,7 +19,8 @@ pip install -r requirements.txt
 ```
 
 ### 3. Download the Dataset
-You should download the NuScenes dataset from the official [Website]([https://github.com/nutonomy/nuscenes-devkit](https://www.nuscenes.org/nuscenes?externalData=all&mapData=all&modalities=Any)https://www.nuscenes.org/nuscenes?externalData=all&mapData=all&modalities=Any)
+You should download the NuScenes dataset from the official [Website](https://github.com/nutonomy/nuscenes-devkit) 
+
 
 ### 4. Get Detections
 You should run a 3d detector on your downloaded dataset and save them in your dir.
