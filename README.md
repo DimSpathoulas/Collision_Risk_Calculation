@@ -46,9 +46,8 @@ I used [this](https://github.com/eddyhkchiu/mahalanobis_3d_multi_object_tracking
                      |── v1.0-mini     <-- metadata and annotations
 ```
 
-## Run the Code
+## Run the Code - Visualize the Results
+head to path_to_your_projects/Collision_Risk_Calculation and run:
 ```bash
-cd path_to_your_projects/Collision_Risk_Calculation
 python coll_risk_calc.py --data_root data\your_nuscenes_data --version your_version --tracking_file data\tracking\your_tracking_results.json --distance_thresh 12 --seconds_to_prediction 3 
-
-
+```
