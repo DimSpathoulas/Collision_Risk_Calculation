@@ -30,7 +30,7 @@ You should run a 3d detector on your downloaded dataset and save them in your di
 ```bash
 # For nuScenes Dataset         
 └── Collision_Risk_Calculation
-       ├── coll_risk_calc <-- main code
+       ├── coll_risk_calc.py <-- main code
        ├── data <-- folder
               └── tracking <-- folder containing multiple results
                      ├── results_tracking.json <-- .json containing results
