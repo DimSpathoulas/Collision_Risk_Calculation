@@ -31,10 +31,10 @@ You should run a 3d detector on your downloaded dataset and save the results in 
 # For nuScenes Dataset         
 └── Collision_Risk_Calculation
        ├── coll_risk_calc.py <-- main code
-       ├── data <-- folder
-              └── tracking <-- folder containing multiple results
+       ├── data              <-- folder
+              └── tracking   <-- folder containing multiple results
                      ├── results_tracking.json <-- .json containing results
-              └── dataset <-- folder
+              └── dataset    <-- folder
                      ├── maps          <-- unused
                      ├── samples       <-- key frames
                      ├── sweeps        <-- frames without annotation
