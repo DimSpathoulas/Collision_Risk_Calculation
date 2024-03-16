@@ -26,7 +26,7 @@ You can also use the mini.
 ### 4. Get Detections
 You should run a 3d detector on your downloaded dataset and save them in your dir.
 
-### 5. The final project dir should look like this
+## The final project dir should look like this
 
 
 
