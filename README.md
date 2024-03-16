@@ -5,7 +5,7 @@ This repository contains code for collision risk calculation based on the NuScen
 ## Instructions
 
 ### 1. Download and Set Up NuScenes Devkit
-Download the NuScenes Devkit from the official website and follow the instructions to set it up.
+Download the [NuScenes Devkit](https://github.com/nutonomy/nuscenes-devkit) and follow the instructions to set it up.
 Make sure to add the devkit to your Python path.
 
 ### 2. Clone the Repository
