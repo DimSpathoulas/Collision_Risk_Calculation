@@ -24,7 +24,7 @@ You can also use the mini.
 
 
 ### 4. Get Detections
-You should run a 3d detector on your downloaded dataset and save them in your dir.
+You should run a 3d detector on your downloaded dataset and save the results in your dir.
 
 ## The final project dir should look like this
 ```bash
