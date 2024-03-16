@@ -9,6 +9,6 @@ This repository contains code for collision risk calculation based on the NuScen
 First, clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone
 cd your-repository
 
