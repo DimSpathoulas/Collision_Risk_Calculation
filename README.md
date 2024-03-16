@@ -27,6 +27,18 @@ You can also use the mini.
 You should run a 3d detector on your downloaded dataset and save them in your dir.
 
 ## The final project dir should look like this
-
+```bash
+# For nuScenes Dataset         
+└── Collision_Risk_Calculation
+       ├── coll_risk_calc <-- main code
+       ├── data <-- folder
+              └── tracking <-- folder containing multiple results
+                     ├── results_tracking.json <-- .json containing results
+              └── dataset <-- folder
+                     ├── maps          <-- unused
+                     ├── samples       <-- key frames
+                     ├── sweeps        <-- frames without annotation
+                     |── v1.0-mini     <-- metadata and annotations
+```
 
 
