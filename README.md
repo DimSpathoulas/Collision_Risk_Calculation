@@ -33,7 +33,7 @@ I used [this](https://github.com/eddyhkchiu/mahalanobis_3d_multi_object_tracking
 
 ## The final project dir should look like this
 ```bash
-# For nuScenes Dataset         
+# Path_to_your_projects        
 └── Collision_Risk_Calculation
        ├── coll_risk_calc.py <-- main code
        ├── data              <-- folder
