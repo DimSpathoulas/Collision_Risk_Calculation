@@ -55,4 +55,4 @@ python coll_risk_calc.py --data_root data\your_nuscenes_data --version your_vers
 ## References and Acknowledgments
 
 ### References
-- [Analytic_Collision_Risk_Calculation_for_Autonomous_Vehicle_Navigation](https://ieeexplore.ieee.org/document/8793264): Paper the module has heavily based on.
+- Module heavily based on the principles outlined in this paper: [Analytic_Collision_Risk_Calculation_for_Autonomous_Vehicle_Navigation](https://ieeexplore.ieee.org/document/8793264)
