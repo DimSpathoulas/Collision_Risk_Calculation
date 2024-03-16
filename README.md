@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Download the Dataset
-You should download the NuScenes dataset from the official [Website](https://github.com/nutonomy/nuscenes-devkit) 
+You should download the NuScenes dataset from the official [Website](https://www.nuscenes.org/).
 
 
 ### 4. Get Detections
