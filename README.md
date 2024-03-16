@@ -51,3 +51,8 @@ head to path_to_your_projects/Collision_Risk_Calculation and run:
 ```bash
 python coll_risk_calc.py --data_root data\your_nuscenes_data --version your_version --tracking_file data\tracking\your_tracking_results.json --distance_thresh 12 --seconds_to_prediction 3 
 ```
+
+## References and Acknowledgments
+
+### References
+- [Analytic_Collision_Risk_Calculation_for_Autonomous_Vehicle_Navigation](https://ieeexplore.ieee.org/document/8793264): Paper the module has heavily based on.
