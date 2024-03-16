@@ -26,7 +26,7 @@ You can also use the mini.
 ### 4. Get Detections
 You should run a 3d detector on your downloaded dataset and save the results.
 
-I used megvii results. [Class-balanced Grouping and Sampling for Point Cloud 3D Object Detection](https://arxiv.org/abs/1908.09492).
+I used [megvii](https://arxiv.org/abs/1908.09492) results. 
 
 ### 5. Get tracking Results
 You should run a tracking algorithm on the detections and save the results in your dir.
