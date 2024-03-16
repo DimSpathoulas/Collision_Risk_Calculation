@@ -20,6 +20,7 @@ pip install -r requirements.txt
 
 ### 3. Download the Dataset
 You should download the NuScenes dataset from the official [Website](https://www.nuscenes.org/).
+You can also use the mini.
 
 
 ### 4. Get Detections
