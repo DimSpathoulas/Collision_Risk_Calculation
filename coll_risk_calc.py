@@ -232,7 +232,7 @@ def octagon_creation(ego_rect, track_poses):
         octagon_centroid = np.mean(octagon, axis=0)
         ego_position = np.mean(curr_ego_rect, axis=0)
         translation_vector = ego_position - octagon_centroid
-        octagon = octagon + translation_vector  # center of octagon is center of ego
+        octagon = octagon + translation_vector
         octagons[timesample] = octagon
 
     return octagons
