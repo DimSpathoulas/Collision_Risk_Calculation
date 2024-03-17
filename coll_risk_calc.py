@@ -29,11 +29,11 @@ from pyquaternion import Quaternion
 from scipy.integrate import dblquad
 from scipy.stats import multivariate_normal
 import argparse
-from TrackingBox import TrackingBox
-from covariance import Covariance
-from data_classes import EvalBoxes
+from tools.TrackingBox import TrackingBox
+from tools.covariance import Covariance
+from tools.data_classes import EvalBoxes
 from tqdm import tqdm
-from minkowskisum import minkowskisum
+from tools.minkowskisum import minkowskisum
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
