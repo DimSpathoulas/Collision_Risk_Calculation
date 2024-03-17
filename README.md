@@ -11,8 +11,8 @@ Make sure to add the devkit to your Python path.
 ### 2. Clone our repo and setup the environment
 ```bash
 cd path_to_your_projects
-conda create --name risk_calc python=3.10
-conda activate risk_calc
+conda create --name coll_risk_calc python=3.10
+conda activate coll_risk_calc
 git clone https://github.com/DimSpathoulas/Collision_Risk_Calculation.git
 cd Collision_Risk_Calculation
 pip install -r requirements.txt
