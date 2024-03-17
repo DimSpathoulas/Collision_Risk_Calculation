@@ -19,17 +19,16 @@ pip install -r requirements.txt
 ```
 
 ### 3. Download the Dataset
-You should download the NuScenes dataset from the official [Website](https://www.nuscenes.org/).
-You can also use the mini.
+Download the NuScenes dataset from the official [Website](https://www.nuscenes.org/).
+You can also use the mini version.
 
 
 ### 4. Get Detections
-You should run a 3d lidar detector on your downloaded dataset and save the results.
-
+Run a 3d lidar detector on your dataset and save the results.
 I used [megvii](https://arxiv.org/abs/1908.09492) results. 
 
 ### 5. Get tracking Results
-You should run a tracking algorithm on the detections and save the results in your dir.
+Run a tracking algorithm on the detections and save the results in your dir.
 I used [this](https://github.com/eddyhkchiu/mahalanobis_3d_multi_object_tracking) repo.
 
 ## The final project dir should look like this
