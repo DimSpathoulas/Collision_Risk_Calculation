@@ -1,6 +1,6 @@
 # Collision Risk Calculation
 
-A collision risk module based on 3 multi-object tracks for autonomous vehicles.
+A collision risk module based on 3d multi-object tracks for autonomous vehicles.
 
 ## Instructions
 
