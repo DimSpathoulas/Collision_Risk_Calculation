@@ -52,6 +52,7 @@ head to path_to_your_projects/Collision_Risk_Calculation and run:
 ```bash
 python coll_risk_calc.py --data_root data\your_nuscenes_data --version your_version --tracking_file data\tracking\your_tracking_results.json --distance_thresh 12 --seconds_to_prediction 3 
 ```
+An example is given inside coll_risk_calc.py
 
 ## References and Acknowledgments
 
