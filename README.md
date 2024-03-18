@@ -1,6 +1,6 @@
 # Collision Risk Calculation
 
-This repository contains code for collision risk calculation based on the NuScenes dataset.
+A collision risk module based on 3 multi-object tracks for autonomous vehicles.
 
 ## Instructions
 
