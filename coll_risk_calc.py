@@ -12,7 +12,7 @@ python coll_risk_calc.py
  --seconds_to_prediction Seconds of prediction
 
 
- Ex:
+ Example:
  python coll_risk_calc.py
  --data_root data\nusc_mini
  --version v1.0-mini
