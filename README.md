@@ -30,6 +30,7 @@ I used [megvii](https://arxiv.org/abs/1908.09492) results.
 ### 5. Get tracking Results
 Run a tracking algorithm on the detections and save the results in your dir.
 I used [this](https://github.com/eddyhkchiu/mahalanobis_3d_multi_object_tracking) repo.
+You can run the mini version using this [fork](https://github.com/DimSpathoulas/mahalanobis_3d_multi_object_tracking).
 
 ## The final project dir should look like this
 ```bash
