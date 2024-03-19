@@ -25,7 +25,7 @@ You can also use the mini version.
 
 ### 4. Get Detections
 Run a 3d lidar detector on your dataset and save the results.
-I used [megvii](https://arxiv.org/abs/1908.09492) results. 
+I used [megvii](https://arxiv.org/abs/1908.09492) results from [MEGVII](https://github.com/V2AI/Det3D). 
 
 ### 5. Get tracking Results
 Run a tracking algorithm on the detections and save the results in your dir.
