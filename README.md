@@ -28,12 +28,12 @@ Run a 3d lidar detector on your dataset and save the results.
 I used [megvii](https://arxiv.org/abs/1908.09492) results from [MEGVII](https://github.com/V2AI/Det3D).
 The [results](https://www.nuscenes.org/data/detection-megvii.zip) in zip.
 
-### 5. Get tracking Results
+### 5. Get Tracking Results
 Run a tracking algorithm on the detections and save the results in your dir.
 I used [this](https://github.com/eddyhkchiu/mahalanobis_3d_multi_object_tracking) repo.
 You can run the mini version using this [fork](https://github.com/DimSpathoulas/mahalanobis_3d_multi_object_tracking).
 
-## The final project dir should look like this
+## The Final Project dir
 ```bash
 # Path_to_your_projects        
 └── Collision_Risk_Calculation
