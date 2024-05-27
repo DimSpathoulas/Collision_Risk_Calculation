@@ -1,4 +1,4 @@
-# Collision Risk Calculation Under 3d Multi-object motion tracking
+# Collision Risk Calculation Under 3d Multi-object Motion Tracking
 
 A collision risk module based on 3d multi-object tracks for autonomous vehicles.
 
