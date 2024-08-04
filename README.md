@@ -1,4 +1,6 @@
 # Collision Risk Calculation Under 3d Multi-object Motion Tracking
+Part of my master thesis.
+
 
 A collision risk module based on 3d multi-object tracks for autonomous vehicles.
 
