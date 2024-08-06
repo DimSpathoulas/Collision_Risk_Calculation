@@ -1,7 +1,7 @@
 # Collision Risk Calculation Under 3d Multi-object Motion Tracking
-Part of my master thesis.
+Part of my master thesis: **Probabilistic 3D Multi-Modal Multi-Object Tracking Using Machine Learning and Analytic Collision Risk Calculation for Autonomous Navigation.**
 
-
+## Overview
 A collision risk module based on 3d multi-object tracks for autonomous vehicles.
 
 ## Instructions
