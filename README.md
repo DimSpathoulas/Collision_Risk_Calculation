@@ -33,7 +33,6 @@ The [results](https://www.nuscenes.org/data/detection-megvii.zip) in zip.
 ### 5. Get Tracking Results
 Run a tracking algorithm on the detections and save the results in your dir.
 I used [this](https://github.com/eddyhkchiu/mahalanobis_3d_multi_object_tracking) repo.
-You can run the mini version using this [fork](https://github.com/DimSpathoulas/mahalanobis_3d_multi_object_tracking).
 
 ## The Final Project dir
 ```bash
@@ -56,7 +55,6 @@ head to path_to_your_projects/Collision_Risk_Calculation and run:
 ```bash
 python coll_risk_calc.py --data_root data\your_nuscenes_data --version your_version --tracking_file data\tracking\your_tracking_results.json --distance_thresh 12 --seconds_to_prediction 3 
 ```
-An example is given inside coll_risk_calc.py
 
 ## References and Acknowledgments
 
