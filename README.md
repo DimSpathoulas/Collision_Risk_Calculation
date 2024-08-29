@@ -2,7 +2,8 @@
 Part of my master thesis: **Probabilistic 3D Multi-Modal Multi-Object Tracking Using Machine Learning and Analytic Collision Risk Calculation for Autonomous Navigation.**
 
 
- **Note: This is a simplified published version.**
+ **Note: This is a simplified published version.
+ The complete module will be uploaded after thesis defense.**
 
  
 ## Overview
