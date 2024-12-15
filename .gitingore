@@ -1,0 +1,8 @@
+*.pth
+*.json
+*.pyc
+*.pdf
+*.txt
+*.png
+*.iti
+*.pkl
