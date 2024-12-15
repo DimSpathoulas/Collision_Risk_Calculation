@@ -52,7 +52,7 @@ def minkowskisum(pol1, pol2):
     i, j = 0, 0
     l1, l2 = len(pol1), len(pol2)
     # iterate through all the vertices
-    while i < len(pol1) and j < len(pol2):
+    while i < len(pol1) or j < len(pol2):
         msum.append(pol1[i % l1] + pol2[j % l2])
         cross = crossprod((pol1[(i+1) % l1] - pol1[i % l1]), pol2[(j+1) % l2] - pol2[j % l2])
         # using right-hand rule choose the vector with the lower polar angle and iterate this polygon's vertex
