@@ -308,9 +308,7 @@ class CSPCalculator:
         return max(0.0, min(1.0, total_csp))
 
 
-def CSP(ego_rectangles, track, P, Q, spat, Net, crit, training):
-
-    loss = None
+def CSP(ego_rectangles, track, P, Q, spat):
 
     state_inds = [0, 1, 7, 8]
     tracks = {}
@@ -351,108 +349,11 @@ def CSP(ego_rectangles, track, P, Q, spat, Net, crit, training):
 
     csp_results = torch.tensor(csp_results).unsqueeze(1).to(device=device).float()
 
-    if training:
-        csp_estimations = Net(ego_rectangles, obstacle_rects, Pts)
-    else:
-        with torch.no_grad():
-            csp_estimations = Net(ego_rectangles, obstacle_rects, Pts)
-            if sum(csp_results) > 0.1:
-                print(csp_estimations, csp_results)
-                loss = crit(csp_estimations, csp_results)
-                print(loss)
-
-    if training:  # hard mining?
-        loss = crit(csp_estimations, csp_results)
-
-    return csp_results, csp_estimations, loss
-
-
-class CSP_NET(nn.Module):
-    def __init__(self):
-        super(CSP_NET, self).__init__()
-
-        # 4,2 4,2 rectangles and 2 from P
-        self.net = nn.Sequential(
-            nn.Linear(18, 32),
-            nn.ReLU(),
-            nn.Dropout(0.1),
-            nn.Linear(32, 16),
-            nn.ReLU(),
-            nn.Dropout(0.1),
-            nn.Linear(16, 1),
-            # nn.ReLU(),
-            # nn.Dropout(0.1),
-            # nn.Linear(4, 1),
-            nn.Sigmoid()
-        )
-
-    def forward(self, in1, in2, in3):
-
-        x1 = torch.tensor(np.array(list(in1.values()))).to(device=device)
-        x2 = torch.tensor(np.array(list(in2.values()))).to(device=device)
-        x3_inter = torch.tensor(np.array(list(in3.values()))).to(device=device)
-
-        p00 = x3_inter[:, 0, 0]
-        p11 = x3_inter[:, 1, 1]
-
-        x3 = torch.stack((p00, p11), dim=1)
-
-        # Flatten each input
-        x1_flat = x1.view(x1.size(0), -1)  # (n, 8)
-        x2_flat = x2.view(x2.size(0), -1)  # (n, 8)
-        x3_flat = x3.view(x3.size(0), -1)  # (n, 2)
-
-        # Concatenate along dimension 1 (n, 18)
-        y = torch.cat((x1_flat, x2_flat, x3_flat), dim=1).float()
-
-        # Pass the concatenated tensor through the network
-        z = self.net(y)
-
-        return z
-
-
-def save_tracker_states(csp_net, save_path):
-    state_dict = csp_net.state_dict()
-    torch.save(state_dict, save_path)
-    print(f"Saved csp net to {save_path}")
-
-
-def load_tracker_states(csp_net, load_path):
-
-    if os.path.exists(load_path):
-        state_dict = torch.load(load_path)
-        csp_net.load_state_dict(state_dict)
-        print(f"Loaded CSP_NET state from {load_path}")
-
-    else:
-        print(f"No saved state found at {load_path}")
-
-    return csp_net
-
+    return csp_results
 
 
 def collision_risk_calculation():
     args = parse_arguments()
-
-    CSP_Net = CSP_NET().to(device)
-
-    training = args.training
-    criterion = nn.BCELoss()
-
-    if training:
-        params_to_optimize = list(CSP_Net.net.parameters())
-        optimizer = torch.optim.Adam(params_to_optimize, lr=0.001)
-        EPOCHS = 5
-
-    else:
-        CSP_Net = load_tracker_states(CSP_Net, load_path=args.load_path)
-
-        for param in CSP_Net.net.parameters():
-            param.requires_grad = False
-            
-        CSP_Net.net.eval()
-
-        EPOCHS = 1
 
     size_ego = [4.084 // 2 + 0.5  ,1.73 , 1.0]
 
@@ -484,7 +385,6 @@ def collision_risk_calculation():
 
     time_frame = 0.5  # roughly 0.5 seconds per sample
 
-    print(device)
     ego_pose_records = nusc.ego_pose
     tracks_list = {}
     tracks_info = {}
@@ -493,6 +393,7 @@ def collision_risk_calculation():
     data_dict = {}
     fig, ax = plt.subplots()
 
+    EPOCHS = 1
 
     for epoch in range(EPOCHS):
 
@@ -561,38 +462,18 @@ def collision_risk_calculation():
                     # we need x, y, l, w, vel_x, vel_y, (rot_z) Ps and Qs
                     P, Q, spat = covariance.get_S(box.tracking_name)
     
-                    csp_analytical, csp_network, loss = CSP(ego_rectangles, track, P, Q, spat, 
-                                                            CSP_Net, criterion, training)
-                    
-                    if loss is not None:
-                        if sample_loss is None:
-                            sample_loss = loss
-                        else:
-                            sample_loss = loss + sample_loss
-                            
-                        cs = cs + 1.0
+                    csp_analytical= CSP(ego_rectangles, track, P, Q, spat)
 
-                    # entry = {
-                    #         'csp': csp,
-                    #         'name': box.tracking_name,
-                    # }
-                    # obstacles[box.tracking_id] = entry
+                    entry = {
+                            'csp': csp_analytical,
+                            'name': box.tracking_name,
+                    }
+                    obstacles[box.tracking_id] = entry
 
-                ego_csp = max((entry['csp'] for entry in obstacles.values()), default=0)
+                # ego_csp = max((entry['csp'] for entry in obstacles.values()), default=0)
                 
                 current_sample_token = nusc.get('sample', current_sample_token)['next']
 
-                if training and sample_loss is not None:
-                    optimizer.zero_grad()
-                    sample_loss.div(cs)
-                    sample_loss.backward()
-                    torch.nn.utils.clip_grad_norm_(params_to_optimize, max_norm=1.0)
-                    optimizer.step()
-
-                else:
-                    pass
-
-    save_tracker_states(CSP_Net, args.save_path)
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Collision Risk Calculator")
@@ -600,20 +481,13 @@ def parse_arguments():
                         help="Path to the data root directory")
     parser.add_argument("--version", type=str, default='v1.0-trainval',
                         help="Version (e.g., v1.0-mini)")
-    parser.add_argument("--tracking_file", type=str, default='/home/ktsiakas/thesis_new/PROB_3D_MULMOD_MOT/results_val_probabilistic_tracking.json',
+    parser.add_argument("--tracking_file", type=str, default='/home/ktsiakas/thesis_new/PROB_3D_MULMOD_MOT/blender_05.json',
                         help="Path to the tracking file")
     
     parser.add_argument("--distance_thresh", type=float, default= 10,
                         help="Distance threshold (in meters)")
     parser.add_argument("--projection_window", type=float, default= 2,
                 help="Model prediction (in seconds)")
-    
-    parser.add_argument("--training", type=str, default= False,
-                help="Model train = True or val")
-    parser.add_argument("--save_path", type=str, default= 'model_10m_2s.pth',
-                help="save the model if in train")
-    parser.add_argument("--load_path", type=str, default= 'model_10m_2s.pth',
-                help="load the model if in val")
     
     return parser.parse_args()
 

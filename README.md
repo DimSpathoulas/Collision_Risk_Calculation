@@ -35,11 +35,12 @@ The [results](https://www.nuscenes.org/data/detection-megvii.zip) in zip.
 Run a tracking algorithm on the detections and save the results in your dir.
 You can use [this](https://github.com/eddyhkchiu/mahalanobis_3d_multi_object_tracking) repo.
 
+
 ## The Final Project dir
 ```bash
 # Path_to_your_projects        
 └── Collision_Risk_Calculation
-       ├── coll_risk_calc.py <-- main code
+       ├── collision_risk_calculator.py <-- main code
        ├── tools             <-- complementary modules
        ├── data              <-- folder
               └── tracking   <-- folder containing multiple results
@@ -56,8 +57,8 @@ head to path_to_your_projects/collision_risk_calculation and run:
 ```bash
 python collision_risk_calculator.py --data_root data\your_nuscenes_data --version your_version --tracking_file data\tracking\your_tracking_results.json --distance_thresh 10 --projection_window 2 
 ```
-You can also run the stand-alone code for csp calculation for experiment perpuses located in ```bash cep_calculation.py```.
-You can also run the older version (vizualing results) simplifying the calculation by forming a rectangle from the octagon in ```bash older_version.py```.
+You can also run the stand-alone code for csp calculation for experimental purposes located in ```csp_calculation.py```.
+You can also run the older version (vizualing results) simplifying the calculations by forming a rectangle from the octagon in ```older_version.py```.
 
 
 
