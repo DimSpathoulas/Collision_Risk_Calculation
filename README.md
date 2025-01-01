@@ -3,7 +3,7 @@ Part of my master thesis: **Probabilistic 3D Multi-Modal Multi-Object Tracking U
 
  
 ## Overview
-An analytic collision risk calculation module based on 3d multi-object tracks for autonomous vehicles.
+An analytic collision risk calculation module based on 3d multi-modal multi-object tracking for autonomous vehicles navigation.
 A review paper in english is under construction.
 
 ## Instructions
