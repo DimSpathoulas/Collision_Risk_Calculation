@@ -69,3 +69,7 @@ You can also run the older version (vizualing results) simplifying the calculati
 ### Acknowledgments
 - I built my minkowski sum calculator on top of this implementation:
 https://github.com/grzesiek2201/MinkowskiSum
+
+
+## Contact Info
+Please feel free to contact me [dimispat1@pme.duth.gr](mailto:dimispat1@pme.duth.gr)
