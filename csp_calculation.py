@@ -109,7 +109,7 @@ class CSPCalculator:
 
     def _integrand(self, x: float, m: float, b: float) -> float:
         """Compute integrand according to equation (5)."""
-        erf_term = erf((m * x + b) / (self.sqrt2 * self.sigma_y))
+        erf_term = erf((m * x + b) / (self.sqrt2 * self.sigma_x))
         exp_term = np.exp(-0.5 * (x / self.sigma_x) ** 2)
         return erf_term * exp_term
 
