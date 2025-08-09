@@ -1,4 +1,4 @@
-# Collision Risk Calculation Under 3d Multi-object Motion Tracking
+# Collision Risk Calculation Under 3D Multi-object Motion Tracking
 Part of my master thesis: **3D Multi-Modal Multi-Object Tracking via Machine Learning and Analytic Collision Risk Calculation for Autonomous Vehicles Navigation.**
 
  
@@ -72,4 +72,4 @@ https://github.com/grzesiek2201/MinkowskiSum
 
 
 ## Contact Info
-Please feel free to contact me [dimispat1@pme.duth.gr](mailto:dimispat1@pme.duth.gr)
+Please feel free to contact me [dimspathacademic@gmail.com](mailto:dimspathacademic@gmail.com)
