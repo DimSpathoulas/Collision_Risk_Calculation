@@ -22,7 +22,7 @@ from tools.minkowskisum import minkowskisum
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-#### VIZUALIZER DOES NOT CORRENTLY WORK
+#### VIZUALIZER DOES NOT CURRENTLY WORK
 def vizualizer(pt, sample_csp, relative_pos, relative_rot, obstacles, curr_sample, distance_t):
     # Clear the current axis
     ax.clear()
