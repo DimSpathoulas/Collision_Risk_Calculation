@@ -66,10 +66,11 @@ You can also run the older version (vizualing results) simplifying the calculati
 
 ### References
 - Module heavily based on the principles outlined in this paper: [Analytic_Collision_Risk_Calculation_for_Autonomous_Vehicle_Navigation](https://ieeexplore.ieee.org/document/8793264)
+<!--
 ### Acknowledgments
 - I built my minkowski sum calculator on top of this implementation:
 https://github.com/grzesiek2201/MinkowskiSum
-
+-->
 
 ## Contact Info
 Please feel free to contact me [dimspathacademic@gmail.com](mailto:dimspathacademic@gmail.com)
